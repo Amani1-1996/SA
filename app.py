@@ -15,27 +15,25 @@ nltk.download("stopwords")
 nltk.download("punkt")
 nltk.download("wordnet")
 
-
 # Function to download a file from Google Drive
 def download_from_gdrive(file_id, dest_path):
     gdown.download(f"https://drive.google.com/uc?id={file_id}", dest_path, quiet=False)
 
-
 # File IDs from Google Drive
-log_reg_model_id = "your_logistic_regression_file_id"
-svm_model_id = "your_svm_file_id"
-tfidf_vectorizer_id = "your_tfidf_vectorizer_file_id"
-word2vec_model_id = "your_word2vec_model_file_id"
+log_reg_model_id = 'your_logistic_regression_file_id'
+svm_model_id = 'your_svm_file_id'
+tfidf_vectorizer_id = 'your_tfidf_vectorizer_file_id'
+word2vec_model_id = 'your_word2vec_model_file_id'
 
 # Download model files
 model_path = "models/"
 if not os.path.exists(model_path):
     os.makedirs(model_path)
 
-download_from_gdrive(log_reg_model_id, model_path + "logistic_regression.pkl")
-download_from_gdrive(svm_model_id, model_path + "svm.pkl")
-download_from_gdrive(tfidf_vectorizer_id, model_path + "tfidf_vectorizer.pkl")
-download_from_gdrive(word2vec_model_id, model_path + "word2vec_model")
+download_from_gdrive(log_reg_model_id, model_path + 'logistic_regression.pkl')
+download_from_gdrive(svm_model_id, model_path + 'svm.pkl')
+download_from_gdrive(tfidf_vectorizer_id, model_path + 'tfidf_vectorizer.pkl')
+download_from_gdrive(word2vec_model_id, model_path + 'word2vec_model')
 
 log_reg_model = joblib.load(model_path + "logistic_regression.pkl")
 svm_model = joblib.load(model_path + "svm.pkl")

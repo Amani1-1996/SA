@@ -1,6 +1,6 @@
 streamlit
 numpy
-scipy>=1.8.1
+scipy>=1.9.1
 scikit-learn
 joblib
 gensim

@@ -1,3 +1,12 @@
+import subprocess
+import sys
+
+# Uninstall conflicting scipy version
+subprocess.run([sys.executable, "-m", "pip", "uninstall", "scipy", "-y"])
+
+# Install the compatible scipy version
+subprocess.run([sys.executable, "-m", "pip", "install", "scipy==1.10.1"])
+
 import joblib
 import numpy as np
 import re
